@@ -50,7 +50,7 @@ dir {{ redis_settings.root_dir }}
 
 {% if redis_settings.slaveof is defined %}
 {% if redis_settings.slaveof.master_mine is defined %}
-{%- set masterip = salt['mine.get'](redis_settings.slaveof.master_mine.target, redis_settings.slaveof.master_mine.function, redis_settings.slaveof.master_mine.expr_form).values()|first %}
+{%- set masterip = salt['mine.get'](redis_settings.slaveof.master_mine.target, redis_settings.slaveof.master_mine.function, redis_settings.slaveof.master_mine.expr_form).values()|first|first %}
 {% else -%}
 {%- set masterip = redis_settings.slaveof.masterip %}
 {% endif -%}
