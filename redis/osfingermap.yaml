@@ -19,3 +19,7 @@ CentOS Linux-7:
 CentOS-6:
   sentinel:
     group: root
+AlmaLinux-9:
+  cfg_name: /etc/redis/redis.conf
+  sentinel_cfg: /etc/redis/sentinel.conf
+  cfg_version: "3.2"
